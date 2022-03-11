@@ -10,8 +10,14 @@ jobs:
       - name: Set up Docker Buildx
         id: buildx
         uses: docker/setup-buildx-action@v1
+      - name: Check buildx before QEMU
+        run: |
+          docker builx inspect
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
+      - name: Check buildx after QEMU
+        run: |
+          docker builx inspect
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run tests
