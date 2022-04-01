@@ -7,10 +7,15 @@ jobs:
   test:
     runs-on: windows-latest
     steps:
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
       - name: Choco
         uses: crazy-max/ghaction-chocolatey@v1
         with:
           args: install docker-desktop
       - run: |
           docker buildx ls
+          docker buildx inspect
+          docker buildx create --name akira
+          docker buildx use akira
           docker buildx inspect
