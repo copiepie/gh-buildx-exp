@@ -6,7 +6,8 @@ on:
 jobs:
   test:
     runs-on: windows-latest
-    - name: Choco
-      uses: crazy-max/ghaction-chocolatey@v1
-      with:
-        args: -h
+    steps:
+      - name: Choco
+        uses: crazy-max/ghaction-chocolatey@v1
+        with:
+          args: -h
