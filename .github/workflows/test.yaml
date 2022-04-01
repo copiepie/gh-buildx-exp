@@ -11,8 +11,6 @@ jobs:
         uses: crazy-max/ghaction-chocolatey@v1
         with:
           args: install docker-desktop
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v1
       - run: |
           docker buildx ls
           docker buildx inspect
