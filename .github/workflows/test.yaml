@@ -17,3 +17,4 @@ jobs:
           docker buildx create --name akira
           docker buildx use akira
           docker buildx inspect
+          docker buildx build --platform=linux/amd64,linux/arm64 -t test/test .
