@@ -18,3 +18,11 @@ jobs:
           docker buildx use akira
           docker buildx inspect
           docker buildx build --platform=linux/amd64,linux/arm64 -t test/test .
+  macos:
+    runs-on: macos-latest
+    steps:
+      - name: Setup minikube 
+        uses: hiberbee/github-action-minikube@master
+      - name: Does docker run
+        run: |
+          docker images
