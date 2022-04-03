@@ -24,8 +24,11 @@ jobs:
       - name: Hyperkit
         run: |
           brew install hyperkit
-      - name: Setup minikube 
-        uses: hiberbee/github-action-minikube@latest
+      - name: Minikube 
+        run: |
+          brew install minikube
+      - name: Start Minikube
+          minikube start
       - name: Does docker run
         run: |
           docker images
