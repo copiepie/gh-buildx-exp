@@ -21,6 +21,9 @@ jobs:
   macos:
     runs-on: macos-latest
     steps:
+      - name: Hyperkit
+        run: |
+          brew install hyperkit
       - name: Setup minikube 
         uses: hiberbee/github-action-minikube@latest
       - name: Does docker run
