@@ -22,7 +22,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Setup minikube 
-        uses: hiberbee/github-action-minikube@master
+        uses: hiberbee/github-action-minikube@latest
       - name: Does docker run
         run: |
           docker images
